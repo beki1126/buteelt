@@ -15,12 +15,12 @@ public class Main {
 
         boolean swtch = true;
         while (swtch) {
-            System.out.println("\n1)daraallaas elementiig hasah()\n"
-                    + "2) Daraalald element nemeh()\n"
-                    + "3) urd taliin element()\n"
-                    + "4) Hoid taliin element()\n"
-                    + "5) Daraalal dahi elementiin too()\n"
-                    + "6) Uldsen daraalliin too()\n");
+            System.out.println("\n1)Дараалалаас элэмент устгах()\n"
+                    + "2) дараалалад элемент нэмэх()\n"
+                    + "3) хамгийн эхний элемэнт()\n"
+                    + "4) хамгийн хойд талийн элемент()\n"
+                    + "5) дараалал дахь нийт элемэнтийн тоо()\n"
+                    + "6) үлдсэн дараалалийн тоо()\n");
 
             switch (sc.nextInt()) {
                 case 1:
