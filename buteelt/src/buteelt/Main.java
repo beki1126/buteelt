@@ -6,7 +6,7 @@ public class Main {
         MyQueue queue = new MyQueue(100);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("ta heden element oruulh be: ");
+        System.out.println("Та хэдэн элемент оруулах вэ: ");
         int n = sc.nextInt();
 
         for (int i = 1; i <= n; i++) {
@@ -24,23 +24,23 @@ public class Main {
 
             switch (sc.nextInt()) {
                 case 1:
-                    System.out.println("\n" + queue.dequeue() + " Daraallaas hasagdsn element\n");
+                    System.out.println("\n" + queue.dequeue() + "Дараалалаас хасагдсан элемент\n");
                     break;
                 case 2:
                     queue.enqueue(sc.nextInt());
-                    System.out.println("\n" + queue.rear() + " Daraalald nemegdsn element\n");
+                    System.out.println("\n" + queue.rear() + " дараалалд нэмэгдсэн элемент\n");
                     break;
                 case 3:
-                    System.out.println("Urd taliin element: " + queue.front());
+                    System.out.println("Хамгийн эхний элемент: " + queue.front());
                     break;
                 case 4:
-                    System.out.println("Hoid taliin element: " + queue.rear());
+                    System.out.println("хамгийн сүүлийн элемент: " + queue.rear());
                     break;
                 case 5:
-                    System.out.println("daraalal dahi elementiin too :" + queue.size);
+                    System.out.println("дараалал дахь элементийн тоо :" + queue.size);
                     break;
                 case 6:
-                    System.out.println("uldsenTaraalliinToo: " + queue.uldsenTaraalliinToo());
+                    System.out.println("үлдсэн элементийн тоо: " + queue.uldsenTaraalliinToo());
                     break;
 
              
@@ -73,18 +73,18 @@ public class Main {
 
         void enqueue(int item) {
             if (isFull()) {
-                System.out.println("Daraalal duuren bn");
+                System.out.println("Дараалал дүүрэн байна");
                 return;
             }
             rear = (rear + 1) % capacity;
             array[rear] = item;
             size++;
-            System.out.println(item + " daraalald orson");
+            System.out.println(item + " дараалалд орсон");
         }
 
         int dequeue() {
             if (isEmpty()) {
-                System.out.println("Daraalal hooson bn.");
+                System.out.println("Дараалал хоосон байна");
                 return Integer.MIN_VALUE;
             }
             int item = array[front];
