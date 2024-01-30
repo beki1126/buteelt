@@ -6,7 +6,7 @@ public class Main {
         MyQueue queue = new MyQueue(100);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Та хэдэн элемент оруулах вэ: ");
+        System.out.println("Та хэдэн элемент оруулах вэ? ");
         int n = sc.nextInt();
 
         for (int i = 1; i <= n; i++) {
