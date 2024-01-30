@@ -110,4 +110,4 @@ public class Main {
             return (capacity - size);
         }
     }
-}
+}шалгах
