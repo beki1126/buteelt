@@ -7,7 +7,7 @@ public class Circle {
  this.radius = radius;
  }
  public static void main(String[] args) {
- System.out.println("----------------------өөрчлөв-----------------------oorchlow--");
+ System.out.println("----------------------өөрчлөв--------алдаатай4-17---------------oorchlow--");
  System.out.println("CircleCalc v1.0");
  System.out.println();
  System.out.println("Calculates and prints information for a user-supplied radius");
