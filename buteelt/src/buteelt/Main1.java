@@ -1,9 +1,9 @@
 package buteelt;
 import java.util.Scanner;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
-        MyQueue queue = new MyQueue(100);
+        MyQueue<Integer> queue = new MyQueue<>(100);
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Та хэдэн элемент оруулах вэ? ");
@@ -15,12 +15,12 @@ public class Main {
 
         boolean swtch = true;
         while (swtch) {
-            System.out.println("\n1)Дарааллаас элэмент устгах()\n"
-                    + "2) дараалалд элемент нэмэх()\n"
+            System.out.println("\n1)Дараалалаас элэмент устгах()\n"
+                    + "2) дараалалад элемент нэмэх()\n"
                     + "3) хамгийн эхний элемэнт()\n"
-                    + "4) хамгийн сүүлийн элемент()\n"
+                    + "4) хамгийн хойд талийн элемент()\n"
                     + "5) дараалал дахь нийт элемэнтийн тоо()\n"
-                    + "6)  дараалалд байгаа элемэнтүүдийн тоо ()\n");
+                    + "6) үлдсэн дараалалийн тоо()\n");
 
             switch (sc.nextInt()) {
                 case 1:
@@ -37,10 +37,10 @@ public class Main {
                     System.out.println("хамгийн сүүлийн элемент: " + queue.rear());
                     break;
                 case 5:
-                    System.out.println("дараалал дахь элементийн тоо :" + queue.size);
+                    System.out.println("дараалал дахь элементийн тоо :" + queue.size());
                     break;
                 case 6:
-                    System.out.println("үлдсэн элементийн тоо: " + queue.uldsenTaraalliinToo());
+                    System.out.println("үлдсэн элементийн тоо: " + queue.remainingCapacity());
                     break;
 
              
@@ -51,16 +51,16 @@ public class Main {
         }
     }
 
-    static class MyQueue {
+    static class MyQueue<T> {
         int front, rear, size;
         int capacity;
-        int array[];
+        T array[];
 
         public MyQueue(int capacity) {
             this.capacity = capacity;
             this.front = this.size = 0;
             this.rear = capacity - 1;
-            this.array = new int[this.capacity];
+            this.array = (T[]) new Object[this.capacity];
         }
 
         boolean isFull() {
@@ -71,7 +71,7 @@ public class Main {
             return (size == 0);
         }
 
-        void enqueue(int item) {
+        void enqueue(T item) {
             if (isFull()) {
                 System.out.println("Дараалал дүүрэн байна");
                 return;
@@ -82,32 +82,37 @@ public class Main {
             System.out.println(item + " дараалалд орсон");
         }
 
-        int dequeue() {
+        T dequeue() {
             if (isEmpty()) {
                 System.out.println("Дараалал хоосон байна");
-                return Integer.MIN_VALUE;
+                return null;
             }
-            int item = array[front];
+            T item = array[front];
             front = (front + 1) % capacity;
             size--;
             return item;
         }
 
-        int front() {
+        T front() {
             if (isEmpty()) {
-                return Integer.MIN_VALUE;
+                return null;
             }
             return array[front];
         }
 
-        int rear() {
+        T rear() {
             if (isEmpty()) {
-                return Integer.MIN_VALUE;
+                return null;
             }
             return array[rear];
         }
-        int uldsenTaraalliinToo() {
-            return (capacity - size);
+
+        int size() {
+            return size;
+        }
+
+        int remainingCapacity() {
+            return capacity - size;
         }
     }
 }
