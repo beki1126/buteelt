@@ -1,18 +1,71 @@
 package buteelt;
+import java.lang.Math;
+import java.util.List;
 public class MyHashTable extends CustomList<iNeedGeneric> {
     // Sum of elements in the list
-    public int sum(CustomList<iNeedGeneric> sa) {
-        int sum = 0;
+ 
+    public double multiplyAllIndexOfElements(CustomList<iNeedGeneric> sa) {
+        double sum = 1;
         for (int i = 0; i < sa.size(); i++) {
-            sum += sa.get(i).getValue(); 
+            sum *= sa.get(i).getValue(); 
         }
         return sum;
     }
+    public double gioaverage(CustomList<iNeedGeneric> sa) {
+        return  Math.sqrt(sum(sa) / sa.size());
+    }
+
+   
+    public static double square(double number){
+        double t;
+      
+        double squareroot = number / 2;
+      
+        do {
+            t = squareroot;
+            squareroot = (t + (number / t)) /4;
+        } while ((t - squareroot) != 0);
+      
+        return squareroot;
+    }
+    public static double nthRoot(CustomList<iNeedGeneric> sa, double sum) {
+    	int n = sa.size();
+        double approx = sum / n;
+        double betterApprox = approx;
+        double precision = 0.0001;
+
+        do {
+            approx = betterApprox;
+            double numerator = sum / Math.pow(approx, n - 1);
+            double denominator = n;
+            betterApprox = (numerator + (denominator - 1) * approx) / denominator;
+        } while (Math.abs(approx - betterApprox) > precision);
+
+        return betterApprox;
+    }
+    
+    private double sum(CustomList<iNeedGeneric> sa) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public static double geometricProgressionAverage(List<Double> numbers) {
+        if (numbers.isEmpty()) {
+            return 0; // or throw an exception depending on your requirements
+        }
+
+        double product = 1.0;
+        for (double number : numbers) {
+            product *= number;
+        }
+
+        return Math.pow(product, 1.0 / numbers.size());
+    }
+
+
 
  
-    public double average(CustomList<iNeedGeneric> sa) {
-        return 1.0 * sum(sa) / sa.size();
-    }
+   
+
 
     public int max(CustomList<iNeedGeneric> sa) {
         int max = sa.get(0).getValue(); 
@@ -35,7 +88,7 @@ public class MyHashTable extends CustomList<iNeedGeneric> {
     }
 
     public void even(CustomList<iNeedGeneric> sa) {
-        System.out.println("Even numbers:");
+        System.out.println("Тэгш тоонууд:");
         for (int i = 0; i < sa.size(); i++) {
             if (sa.get(i).getValue() % 2 == 0) { 
                 System.out.print(sa.get(i).getValue() + " ");
@@ -45,7 +98,7 @@ public class MyHashTable extends CustomList<iNeedGeneric> {
     }
 
     public void odd(CustomList<iNeedGeneric> sa) {
-        System.out.println("Odd numbers:");
+        System.out.println("Сондгой тоонууд:");
         for (int i = 0; i < sa.size(); i++) {
             if (sa.get(i).getValue() % 2 != 0) { 
                 System.out.print(sa.get(i).getValue() + " "); 
@@ -56,20 +109,23 @@ public class MyHashTable extends CustomList<iNeedGeneric> {
 
     public static void main(String[] args) {
         MyHashTable mb = new MyHashTable();
+      //   ArrayList <Integer> b = new ArrayList();
+      
         
         CustomList<iNeedGeneric> numbers = new CustomList<iNeedGeneric>();
         
-        numbers.add(new iNeedGeneric(1));
-        numbers.add(new iNeedGeneric(2));
-        numbers.add(new iNeedGeneric(3));
-        numbers.add(new iNeedGeneric(4));
+        numbers.add(new iNeedGeneric(5));
+        numbers.add(new iNeedGeneric(19));
+        numbers.add(new iNeedGeneric(23));
+   
 
         
-        System.out.println(mb.min(numbers));
-        System.out.println(mb.max(numbers));
-        System.out.println(mb.average(numbers));
-        System.out.println(mb.sum(numbers));
-
+//        System.out.println("Хамгийн бага тоо: "+mb.min(numbers));
+//        System.out.println("Хамгийн их тоо: "+mb.max(numbers));
+//        //System.out.println("Геометр Дундаж: "+mb.gioaverage(numbers));
+//        System.out.println("Геометр Дундаж: "+Math.sqrt(mb.square(mb.multiplyAllIndexOfElements(numbers))));
+        System.out.println("Үржвэр: "+mb.multiplyAllIndexOfElements(numbers));
+        	System.out.println(" Геометр Дундаж" + mb.nthRoot(numbers, mb.multiplyAllIndexOfElements(numbers)) );
         mb.even(numbers);
         mb.odd(numbers);
     }
