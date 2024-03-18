@@ -16,6 +16,7 @@ public class Student{
         this.date=date;
         this.QOD=QOD;
         this.username=username;
+        //jbdcdbcyudb
         this.password=password;
     }
 
