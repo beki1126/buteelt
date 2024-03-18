@@ -124,9 +124,7 @@ public class MyHashTable extends CustomList<iNeedGeneric> {
 
         
         System.out.println("Хамгийн бага тоо: "+mb.min(numbers));
-      System.out.println("Хамгийн их тоо: "+mb.max(numbers));
-//        //System.out.println("Геометр Дундаж: "+mb.gioaverage(numbers));
-//        System.out.println("Геометр Дундаж: "+Math.sqrt(mb.square(mb.multiplyAllIndexOfElements(numbers))));
+        System.out.println("Хамгийн их тоо: "+mb.max(numbers));
         System.out.println("Үржвэр: "+mb.multiplyAllIndexOfElements(numbers));
         	System.out.println(" Геометр Дундаж" + mb.nthRoot(numbers, mb.multiplyAllIndexOfElements(numbers)) );
         mb.even(numbers);
