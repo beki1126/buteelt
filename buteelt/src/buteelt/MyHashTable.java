@@ -114,14 +114,17 @@ public class MyHashTable extends CustomList<iNeedGeneric> {
         
         CustomList<iNeedGeneric> numbers = new CustomList<iNeedGeneric>();
         
-        numbers.add(new iNeedGeneric(5));
+        numbers.add(new iNeedGeneric(2));
         numbers.add(new iNeedGeneric(19));
         numbers.add(new iNeedGeneric(23));
+        numbers.add(new iNeedGeneric(27));
+        numbers.add(new iNeedGeneric(33));
+   
    
 
         
-//        System.out.println("Хамгийн бага тоо: "+mb.min(numbers));
-//        System.out.println("Хамгийн их тоо: "+mb.max(numbers));
+        System.out.println("Хамгийн бага тоо: "+mb.min(numbers));
+      System.out.println("Хамгийн их тоо: "+mb.max(numbers));
 //        //System.out.println("Геометр Дундаж: "+mb.gioaverage(numbers));
 //        System.out.println("Геометр Дундаж: "+Math.sqrt(mb.square(mb.multiplyAllIndexOfElements(numbers))));
         System.out.println("Үржвэр: "+mb.multiplyAllIndexOfElements(numbers));
