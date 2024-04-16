@@ -447,7 +447,7 @@ System.out.println("------------------------------------------------------------
        System.out.println("3р асуулт");
        asuult31();
     }
-	 // 3;10 pm
+	 // tsag tawina 
     
 
 }
